@@ -52,21 +52,19 @@ class Installer.Views.Dashboard extends BaseView
     @vmListViewController = new VMListViewController
       itemClass : VMListViewItem
       
-    @vmListView = @vmListViewController.getView()
-    # @vmListViewController.loadItems()    
+    @vmListView = @vmListViewController.getView() 
     
   pistachio: ->
     """
     <header>
       <img src="#{@recipe.icon}" onerror="this.src='#{Installer.Settings.defaultIcon}'">
-      <div>
+      <div class="desc">
         <h1>#{@recipe.name}</h1>
         <p>
           #{@recipe.desc}
         </p>
-        <p>
-          <strong>VM(s):</strong>
-        </p>
+        <br><br>
+        <h2>Your VM(s)</h2>
         {{> @vmListView}}
       </div>
       {{> @buttonsView}}
