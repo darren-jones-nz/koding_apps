@@ -1,0 +1,44 @@
+{
+  "devMode": false,
+  "authorNick": "kiwigeraint",
+  "multiple": false,
+  "background": false,
+  "hiddenHandle": false,
+  "openWith": "lastActive",
+  "behavior": "application",
+  "version": "1.1.5",
+  "name": "MongoDB Installer",
+  "identifier": "com.koding.apps.MongoInstaller",
+  "path": "~/Applications/MongoInstaller.kdapp",
+  "homepage": "",
+  "author": "Geraint Jones",
+  "repository": "",
+  "description": "Mongo Installer : a Koding application to install MongoDB server. <B>Warning, MongoDB uses a lot of diskspace</B>",
+  "category": "installer",
+  "source": {
+    "blocks": {
+      "app": {
+        "files": [
+          "./app/core.coffee",
+          "./recipe/installer.coffee",
+          "./app/utilities.coffee",
+          "./app/views.coffee",
+          "./index.coffee"
+        ]
+      }
+    },
+    "stylesheets": [
+      "./resources/style.css"
+    ]
+  },
+  "options": {
+    "type": "tab"
+  },
+  "icns": {
+    "256": "./resources/icon.256.png"
+  },
+  "screenshots": [
+    "./resources/screenshot.png"
+  ],
+  "menu": []
+}

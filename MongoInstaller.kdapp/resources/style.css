@@ -1,0 +1,53 @@
+.kdview.installer-container .installer-terminal {
+  position  : absolute;
+  height    : 350px;
+  width     : 100%;
+  bottom    : -200px;
+  opacity   : 0;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+}
+
+.kdview.installer-container .installer-terminal.shown {
+  bottom    : 0;
+  opacity   : 1;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+}
+
+.kdview.installer-container .installer-dashboard {
+  padding   : 10px;
+  width     : auto;
+  background: #e2e2e2;
+  background: -moz-linear-gradient(top,  #e2e2e2 0%, #ffffff 30%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e2e2e2), color-stop(30%,#ffffff));
+  background: -webkit-linear-gradient(top,  #e2e2e2 0%,#ffffff 30%);
+  background: -o-linear-gradient(top,  #e2e2e2 0%,#ffffff 30%);
+  background: linear-gradient(to bottom,  #e2e2e2 0%,#ffffff 30%);
+}
+
+.kdview.installer-container .installer-dashboard header {
+  width     : auto;
+}
+
+.kdview.installer-container .installer-dashboard header img {
+  float     : left;
+  width     : 160px;
+  margin-right: 10px;
+}
+
+.kdview.installer-container .installer-dashboard header h1 {
+  padding   : 15px 0;
+}
+
+.kdview.installer-container .installer-dashboard .buttons {
+  width     : auto;
+  position  : absolute;
+  top       : 20px;
+  right     : 10px;
+}
+
+.kdview.installer-container .installer-dashboard .buttons button {
+  margin    : 0 5px;
+  font-size: 16px;
+}

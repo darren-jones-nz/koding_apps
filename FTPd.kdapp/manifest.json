@@ -1,0 +1,42 @@
+{
+  "devMode": false,
+  "authorNick": "kiwigeraint",
+  "multiple": false,
+  "background": false,
+  "hiddenHandle": false,
+  "openWith": "lastActive",
+  "behavior": "application",
+  "version": "1.0.3",
+  "name": "PureFTPd Installer",
+  "identifier": "com.koding.apps.FTPd",
+  "path": "~/Applications/FTPd.kdapp",
+  "homepage": "",
+  "author": "Geraint Jones",
+  "repository": "",
+  "description": "FTP Installer : a Koding application to install Pure-FTPd server.",
+  "category": "installer",
+  "source": {
+    "blocks": {
+      "app": {
+        "files": [
+          "./app/core.coffee",
+          "./recipe/installer.coffee",
+          "./app/utilities.coffee",
+          "./app/views.coffee",
+          "./index.coffee"
+        ]
+      }
+    },
+    "stylesheets": [
+      "./resources/style.css"
+    ]
+  },
+  "options": {
+    "type": "tab"
+  },
+  "icns": {
+    "256": "./resources/icon.256.png"
+  },
+  "screenshots": [],
+  "menu": []
+}
