@@ -48,6 +48,12 @@ class Installer.Views.Dashboard extends BaseView
     @buttonsView.addSubView @toggleTerminaButton = new KDButtonView
       title     : "Terminal"
       callback  : => @terminal.toggle()
+      
+    @vmListViewController = new VMListViewController
+      itemClass : VMListViewItem
+      
+    @vmListView = @vmListViewController.getView()
+    # @vmListViewController.loadItems()    
     
   pistachio: ->
     """
@@ -58,12 +64,54 @@ class Installer.Views.Dashboard extends BaseView
         <p>
           #{@recipe.desc}
         </p>
+        <p>
+          <strong>VM(s):</strong>
+        </p>
+        {{> @vmListView}}
       </div>
       {{> @buttonsView}}
     </header>
     """
 
+class VMListViewController extends KDListViewController
+  loadView:->
+    super
+    @loadItems()
 
+  loadItems:(callback)->
+    @removeAllItems()
+    @customItem?.destroy()
+    @showLazyLoader no
+
+    KD.remote.api.JVM.fetchVms (err, vms)=>
+      items = []
+      vms.forEach (vmHost)->
+        items.push
+          hostname: vmHost
+          
+      @hideLazyLoader()
+      if items.length is 0
+        @addCustomItem "You don't have any VMs yet."
+      else
+        @instantiateListItems items
+
+  addCustomItem:(message)->
+    @removeAllItems()
+    @customItem?.destroy()
+    @scrollView.addSubView @customItem = new KDCustomHTMLView
+      cssClass : "no-item-found"
+      partial  : message
+
+class VMListViewItem extends KDListItemView
+  partial:(data)->
+    """
+      <strong>FTP address:</strong> #{data.hostname}
+      <br>
+      <strong>Username:</strong> #{USER}@#{data.hostname}
+      <br>
+      <br>
+    """
+    
 class Installer.Views.TerminalView extends BaseView
 
   remote: {}
