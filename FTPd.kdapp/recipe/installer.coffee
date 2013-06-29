@@ -20,8 +20,6 @@ class AppInstaller extends Recipe
   icon: "http://#{USER}.kd.io/.applications/ftpd-installer/resources/icon.256.png" # Settings.defaultIcon
   desc: """
         Installs FTP so you can connect to your VM with FTP.<br/><br/>
-        Once installed you connect to your VM by FTPing to the domain associated with your vm, for example vm-3.#{nickname}.koding.kd.io<br/>
-        Your username should be #{nickname}@vm-3.#{nickname}.koding.kd.io<br/>
         Your password is your koding password
         """
   path: "#{HOME}/Applications/FTPd.kdapp"
